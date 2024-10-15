@@ -1,0 +1,22 @@
+[package]
+name = "platform_psx"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+game = { path = "../game" }
+
+# Platform Specific Dependencies
+psx = { git = "https://github.com/ayrtonm/psx-sdk-rs" }
+# Required to provide atomic types for dependencies
+portable-atomic = { version = "1.0.0", default-features = false, features = ["critical-section", "fallback"] }
+# Required to enable atomic types
+ahash = { git = "https://github.com/tkaitchuck/aHash", rev = "7d5c661a74b12d5bc5448b0b83fdb429190db1a3", default-features = false, features = ["atomic-polyfill", "compile-time-rng"] }
+# You'll need to make a real allocator...
+dummy-alloc = "0.1.0"
+
+[patch.crates-io]
+# Required for ahash to use `portable-atomic` dependency, waiting for next release for official support
+ahash = { git = "https://github.com/tkaitchuck/aHash", rev = "7d5c661a74b12d5bc5448b0b83fdb429190db1a3" }

@@ -1,0 +1,9 @@
+[unstable]
+build-std = ["core", "alloc"]
+build-std-features = ["compiler-builtins-mem"]
+
+[build]
+target = "mipsel-sony-psx"
+
+[target.mipsel-sony-psx]
+runner = "mednafen"

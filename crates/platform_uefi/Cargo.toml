@@ -1,0 +1,16 @@
+[package]
+name = "platform_uefi"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+game = { path = "../game" }
+
+# Platform Specific Dependencies
+uefi = { version = "0.32.0", features = ["alloc", "global_allocator", "logger", "panic_handler"] }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic="abort"

@@ -1,0 +1,16 @@
+[package]
+name = "platform_switch"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+game = { path = "../game" }
+
+# Platform Specific Dependencies
+nx = { git = "https://github.com/aarch64-switch-rs/nx", features = [ "input" ] }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

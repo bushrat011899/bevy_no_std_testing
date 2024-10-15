@@ -1,0 +1,20 @@
+[package]
+name = "game"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+
+[dependencies]
+# Compatible Bevy Crates
+bevy_ptr = { git = "https://github.com/bushrat011899/bevy", rev = "bb237d8f8cafb96539eb72cc5a72e80897fbbeb1", default-features = false }
+bevy_utils = { git = "https://github.com/bushrat011899/bevy", rev = "bb237d8f8cafb96539eb72cc5a72e80897fbbeb1", default-features = false, features = ["alloc"] }
+bevy_mikktspace = { git = "https://github.com/bushrat011899/bevy", rev = "bb237d8f8cafb96539eb72cc5a72e80897fbbeb1", default-features = false, features = ["libm"] }
+
+# Incompatible Core Bevy Crates
+# bevy_tasks = { git = "https://github.com/bevyengine/bevy" }
+# bevy_ecs = { git = "https://github.com/bevyengine/bevy" }
+# bevy_app = { git = "https://github.com/bevyengine/bevy" }
+
+# Other
+log = "0.4.21"

@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "crates/game",
+    "crates/platform_uefi",
+    "crates/platform_gba",
+    "crates/platform_switch",
+    "crates/platform_psx",
+    "crates/platform_msp430",
+]
+
+[patch.crates-io]
+ahash = { git = "https://github.com/tkaitchuck/aHash", rev = "7d5c661a74b12d5bc5448b0b83fdb429190db1a3" }
