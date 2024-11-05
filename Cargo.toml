@@ -12,3 +12,9 @@ members = [
 
 [patch.crates-io]
 ahash = { git = "https://github.com/tkaitchuck/aHash", rev = "7d5c661a74b12d5bc5448b0b83fdb429190db1a3" }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
